@@ -1,4 +1,4 @@
-package chapter_21_concurrency.part_one.exercises_one.ex_2;
+package chapter_21_concurrency.part_one.thread.exercises.ex_2;
 
 import java.util.ArrayList;
 

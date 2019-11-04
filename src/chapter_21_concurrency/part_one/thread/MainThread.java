@@ -1,4 +1,6 @@
-package chapter_21_concurrency.part_one;
+package chapter_21_concurrency.part_one.thread;
+
+import chapter_21_concurrency.part_one.LiftOff;
 
 public class MainThread {
 

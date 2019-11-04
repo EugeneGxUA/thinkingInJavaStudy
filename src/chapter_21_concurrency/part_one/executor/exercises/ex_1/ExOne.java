@@ -1,8 +1,11 @@
-package chapter_21_concurrency.part_one.exercises_one.ex_1;
+package chapter_21_concurrency.part_one.executor.exercises.ex_1;
 
-public class ExerciseOne implements Runnable {
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-    private static int taskCounter = 0;
+public class ExOne implements Runnable {
+
+    private static int taskCounter;
     private final int id = taskCounter++;
 
     @Override
@@ -18,10 +21,14 @@ public class ExerciseOne implements Runnable {
     }
 }
 
-class ExerciseExecutor {
+class Executor {
+
     public static void main(String[] args) {
+        ExecutorService exec = Executors.newFixedThreadPool(5);
+
         for (int i = 0; i < 5; i++) {
-            new Thread(new ExerciseOne()).start();
+            exec.execute(new ExOne());
         }
+        exec.shutdown();
     }
 }
